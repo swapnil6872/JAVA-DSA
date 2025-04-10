@@ -29,6 +29,28 @@ public class basicSortingalgo {
         }
     }
 
+    // insertion sort 
+    public static void insertionSort(int arr[]){
+        for( int i = 1 ; i <arr.length; i++){
+          // using for lopp 
+            for(int j = 0 ; j <= i ; j++ ){
+                if( arr[i] < arr[j]){
+                  int temp = arr[i];
+                  arr[i]=arr[j];
+                  arr[j]=temp;
+                }
+            }
+            // lets try with while loop = its conditon based
+            int prev = i-1;
+            while (arr[i] < arr[prev] && prev >=0 ) {
+                int temp = arr[i];
+                arr[i]=arr[prev];
+                arr[prev]=temp;
+                prev--;
+            } 
+        }
+    }
+
     public static void printArr(int arr[]) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
@@ -38,7 +60,8 @@ public class basicSortingalgo {
     public static void main(String[] args) {
         int arr[] = { 5, 4, 3, 2, 1 };
         // bubblesort(arr);
-        selectionSort(arr);
+        // selectionSort(arr);
+        insertionSort(arr);
         printArr(arr);
     }
 
